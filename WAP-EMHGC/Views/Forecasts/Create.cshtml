@@ -1,0 +1,77 @@
+﻿@model WAP_EMHGC.Models.Forecast
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Forecast</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ForecastId" class="control-label"></label>
+                <input asp-for="ForecastId" class="form-control" />
+                <span asp-validation-for="ForecastId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ForecastAsia" class="control-label"></label>
+                <input asp-for="ForecastAsia" class="form-control" />
+                <span asp-validation-for="ForecastAsia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ForecastEnso" class="control-label"></label>
+                <input asp-for="ForecastEnso" class="form-control" />
+                <span asp-validation-for="ForecastEnso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ForecastTemp" class="control-label"></label>
+                <input asp-for="ForecastTemp" class="form-control" />
+                <span asp-validation-for="ForecastTemp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ForecastWind" class="control-label"></label>
+                <input asp-for="ForecastWind" class="form-control" />
+                <span asp-validation-for="ForecastWind" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ForecastSea" class="control-label"></label>
+                <input asp-for="ForecastSea" class="form-control" />
+                <span asp-validation-for="ForecastSea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note" class="control-label"></label>
+                <input asp-for="Note" class="form-control" />
+                <span asp-validation-for="Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataId" class="control-label"></label>
+                <select asp-for="DataId" class ="form-control" asp-items="ViewBag.DataId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,173 @@
+﻿@model IEnumerable<WAP_EMHGC.Models.Station>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Idstation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TempMin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tempmax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NorTemp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Feedlike)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WindMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GustWind)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pressuse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hummity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wave)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HighSufw)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LowSufw)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rain)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RainPossi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DewPoint)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cloud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Snow)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeUpdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataStation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idstation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TempMin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tempmax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NorTemp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Feedlike)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WindMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GustWind)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pressuse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hummity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wave)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HighSufw)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LowSufw)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rain)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RainPossi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DewPoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cloud)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Snow)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeUpdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataStation.DataStationId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StationId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StationId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StationId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

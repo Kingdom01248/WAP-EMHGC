@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WAP_EMHGC.Models.Chart>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraphVie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraphJtwc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraphObj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraphTb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraphWo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraphOrther)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GraphVie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GraphJtwc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GraphObj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GraphTb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GraphWo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GraphOrther)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data.DataId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ChartId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ChartId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ChartId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
