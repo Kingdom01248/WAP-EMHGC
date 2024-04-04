@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - WAP_EMHGC</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WAP_EMHGC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/main.cshtml.css" asp-append-version="true" />
     <style>
         body {
             background-color: white;
@@ -39,11 +39,16 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="News">News</a>
                         </li>
-                    </ul>
-                    <ul>
-                        <li></li>
+                        <li class="dropdown">
+                            <button class="dropbtn">Menu</button>
+                            <div class="dropdown-content">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -72,6 +77,6 @@
     <script id="2">
 
     </script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("Scripts", required: false) @*<link rel="stylesheet" href="~/WAP_EMHGC.styles.css" asp-append-version="true" />*@
 </body>
 </html>
