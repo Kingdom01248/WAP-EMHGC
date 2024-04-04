@@ -10,11 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\css\main.cshtml.css" />
+    <Content Remove="wwwroot\css\main.css" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\css\main.cshtml.css" />
+    <None Include="wwwroot\css\main.css" />
   </ItemGroup>
 
   <ItemGroup>
