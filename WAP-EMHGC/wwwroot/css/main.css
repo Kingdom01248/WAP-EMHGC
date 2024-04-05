@@ -1,6 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-.header {
+.header_top {
     padding: 22px;
     text-align: center;
     background: #1abc9c;
@@ -98,7 +98,7 @@ button.accept-policy {
     background-color: #3e8e41;
 }
 
-.header {
+.header_top {
     padding: 22px;
     text-align: center;
     background: #1abc9c;
@@ -106,8 +106,30 @@ button.accept-policy {
 }
 
     /* Increase the font size of the heading */
-    .header h1 {
+    .header_top h1 {
         font-size: 40px;
+    }
+
+
+.top-container {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+}
+
+
+.content {
+    padding: 16px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+    .sticky + .content {
+        padding-top: 102px;
     }
 
 .footer {

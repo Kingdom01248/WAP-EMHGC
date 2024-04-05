@@ -19,16 +19,18 @@
             background-color: black;
             color: white;
         }
+
+        
     </style>
 </head>
 <body>
-    <header style="position:sticky">
-        <div class="header">
+    <header>
+        <div class="header_top">
             <h1>EMHGC</h1>
             <p>A <b>responsive</b> website created by me.</p>
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WAP</a>
         </div>
-        <section class="wrap-main-nav">
+        <div class="header" id="myHeader">
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
                 <div class="container-fluid">
                     <a class="navbar-brand" onclick="myFunction()">WAP_EMHGC</a>
@@ -66,10 +68,10 @@
                     </div>
                 </div>
             </nav>
-        </section>
+        </div>
     </header>
 
-    <div class="container">
+    <div class="container content">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -90,22 +92,18 @@
         }
     </script>
     <script id="2">
-        // When the user scrolls the page, execute myFunction
-        //window.onscroll = function () { myFunction() };
+        window.onscroll = function () { myFunction() };
 
-        // Get the navbar
-        //var navbar = document.getElementById("navbar");
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
 
-        // Get the offset position of the navbar
-        //var sticky = navbar.offsetTop;
-
-        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-        //function myFunction() {
-            //if (window.pageYOffset >= sticky) {
-                //navbar.classList.add("sticky")
-            //} else {
-                //navbar.classList.remove("sticky");
-            //}
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
         //}
     </script>
     @await RenderSectionAsync("Scripts", required: false) @*<link rel="stylesheet" href="~/WAP_EMHGC.styles.css" asp-append-version="true" />*@
