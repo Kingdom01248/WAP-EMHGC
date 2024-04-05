@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
     <style>
         body {
             background-color: white;
@@ -20,40 +22,53 @@
     </style>
 </head>
 <body>
-    <header>
+    <header style="position:sticky">
         <div class="header">
             <h1>EMHGC</h1>
             <p>A <b>responsive</b> website created by me.</p>
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WAP</a>
         </div>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" onclick="myFunction()">WAP_EMHGC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="News">News</a>
-                        </li>
-                        <li class="dropdown">
-                            <button class="dropbtn">Menu</button>
-                            <div class="dropdown-content">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
+        <section class="wrap-main-nav">
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand" onclick="myFunction()">WAP_EMHGC</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="News">News</a>
+                            </li>
+                            <li class="dropdown">
+                                <button class="dropbtn">Menu</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Link 1</a>
+                                    <a href="#">Link 2</a>
+                                    <a href="#">Link 3</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Manager" asp-action="Login">Login</a>
+                            </li>
+                        </ul>
+                        <!-- Navbar Search-->
+                        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                             </div>
-                        </li>
-                    </ul>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </section>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -75,7 +90,23 @@
         }
     </script>
     <script id="2">
+        // When the user scrolls the page, execute myFunction
+        //window.onscroll = function () { myFunction() };
 
+        // Get the navbar
+        //var navbar = document.getElementById("navbar");
+
+        // Get the offset position of the navbar
+        //var sticky = navbar.offsetTop;
+
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        //function myFunction() {
+            //if (window.pageYOffset >= sticky) {
+                //navbar.classList.add("sticky")
+            //} else {
+                //navbar.classList.remove("sticky");
+            //}
+        //}
     </script>
     @await RenderSectionAsync("Scripts", required: false) @*<link rel="stylesheet" href="~/WAP_EMHGC.styles.css" asp-append-version="true" />*@
 </body>
